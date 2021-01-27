@@ -1,57 +1,48 @@
-// PLUS EVENT HANDERLLER
-const plusBtn = document.getElementById('plus')
-plusBtn.addEventListener('click',function(){
-    const quantity = document.getElementById('quantity').value
+function plus(id,idtwo,number){
+    const quantity = document.getElementById(id).value
     const quantityNUmber = parseFloat(quantity)
 
     const newQuantity = quantityNUmber + 1
-    document.getElementById('quantity').value = newQuantity
+    document.getElementById(id).value = newQuantity
 
-    const currentCost = document.getElementById('currentCost').innerText
+    const currentCost = document.getElementById(idtwo).innerText
     const currentCostNumber = parseFloat(currentCost)
-    const totalPrice = newQuantity * 1219
-    document.getElementById('currentCost').innerText = totalPrice
+    const totalPrice = newQuantity * number
+    document.getElementById(idtwo).innerText = totalPrice
+}
+function minus(id,idtwo,number) {
+    const quantity = document.getElementById(id).value
+    const quantityNUmber = parseFloat(quantity)
+
+    const newQuantity = quantityNUmber - 1
+    document.getElementById(id).value = newQuantity
+
+    const currentCost = document.getElementById(idtwo).innerText
+    const currentCostNumber = parseFloat(currentCost)
+    const totalPrice = newQuantity * number
+    document.getElementById(idtwo).innerText = totalPrice
+}
+// PLUS EVENT HANDERLLER
+const plusBtn = document.getElementById('plus')
+plusBtn.addEventListener('click',function(){
+    plus('quantity','currentCost',1219)
 })
 // MINUS EVENT HANDERLLER
 const minsusBtn = document.getElementById('minus')
 minsusBtn.addEventListener('click',function(){
-    const quantity = document.getElementById('quantity').value
-    const quantityNUmber = parseFloat(quantity)
-
-    const newQuantity = quantityNUmber - 1
-    document.getElementById('quantity').value = newQuantity
-
-    const currentCost = document.getElementById('currentCost').innerText
-    const currentCostNumber = parseFloat(currentCost)
-    const totalPrice = newQuantity * 1219
-    document.getElementById('currentCost').innerText = totalPrice
+    minus('quantity','currentCost',1219)
 })
 // COVER EVENT HANDELER
 // PLUS HANDELER
 const coverPlusBtn = document.getElementById('coverPlus')
 coverPlusBtn.addEventListener('click',function(){
-    const coverQuantity = document.getElementById('coverQuantity').value
-    const coverQuantityNumber = parseFloat(coverQuantity)
-
-    const newCoverQuantity = coverQuantityNumber + 1
-    document.getElementById('coverQuantity').value = newCoverQuantity
-
-    const currentCoverCost = document.getElementById('currentCoverCost').innerText
-    const currentCoverCostNumber = parseFloat(currentCoverCost)
-    const totalCoverCost = newCoverQuantity * 59
-    document.getElementById('currentCoverCost').innerText = totalCoverCost
+   plus('coverQuantity','currentCoverCost',59)
 })
 // MINUS HANDELER
 const coverMinusBtn = document.getElementById('coverMinus')
 coverMinusBtn.addEventListener('click',function(){
-    const coverQuantity = document.getElementById('coverQuantity').value
-    const coverQuantityNumber = parseFloat(coverQuantity)
-
-    const newCoverQuantity = coverQuantityNumber - 1
-    document.getElementById('coverQuantity').value = newCoverQuantity
-
-    const currentCoverCost = document.getElementById('currentCoverCost').innerText
-    const currentCoverCostNumber = parseFloat(currentCoverCost)
-    const totalCoverCost = newCoverQuantity * 59
-    document.getElementById('currentCoverCost').innerText = totalCoverCost
+    minus('coverQuantity','currentCoverCost',59)
 })
+// FINAL PRICE
+// FINAL PRICE
+// FINAL PRICE
