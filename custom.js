@@ -26,3 +26,32 @@ minsusBtn.addEventListener('click',function(){
     const totalPrice = newQuantity * 1219
     document.getElementById('currentCost').innerText = totalPrice
 })
+// COVER EVENT HANDELER
+// PLUS HANDELER
+const coverPlusBtn = document.getElementById('coverPlus')
+coverPlusBtn.addEventListener('click',function(){
+    const coverQuantity = document.getElementById('coverQuantity').value
+    const coverQuantityNumber = parseFloat(coverQuantity)
+
+    const newCoverQuantity = coverQuantityNumber + 1
+    document.getElementById('coverQuantity').value = newCoverQuantity
+
+    const currentCoverCost = document.getElementById('currentCoverCost').innerText
+    const currentCoverCostNumber = parseFloat(currentCoverCost)
+    const totalCoverCost = newCoverQuantity * 59
+    document.getElementById('currentCoverCost').innerText = totalCoverCost
+})
+// MINUS HANDELER
+const coverMinusBtn = document.getElementById('coverMinus')
+coverMinusBtn.addEventListener('click',function(){
+    const coverQuantity = document.getElementById('coverQuantity').value
+    const coverQuantityNumber = parseFloat(coverQuantity)
+
+    const newCoverQuantity = coverQuantityNumber - 1
+    document.getElementById('coverQuantity').value = newCoverQuantity
+
+    const currentCoverCost = document.getElementById('currentCoverCost').innerText
+    const currentCoverCostNumber = parseFloat(currentCoverCost)
+    const totalCoverCost = newCoverQuantity * 59
+    document.getElementById('currentCoverCost').innerText = totalCoverCost
+})
